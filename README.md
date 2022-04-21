@@ -2,7 +2,7 @@
 
 open terminal
 
-git clone https://github.com/histyria/hesa-project.git
+git clone https://github.com/histyria/hesa-project-libary.git
 
 cd hesa-project-libary
 
