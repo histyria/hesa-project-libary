@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+
+      <!-- ======= Portfolio Details Section ======= -->
+      <section id="portfolio-details" class="portfolio-details">
+        <div class="container">
+  
+          <div class="row gy-4">
+  
+            <div class="col-lg-8">
+              <div class="portfolio-details-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+  
+                  
+                  <div class="swiper-slide">
+                    {% if book.pic_book %}
+                    <img src="{{book.pic_book.url}}"  alt="">
+                    {% endif %}
+                  </div>
+  
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4">
+              <div class="portfolio-info">
+                <h3>معلومات الكتاب</h3>
+                <ul>
+                  <li><strong>اسم الكتاب</strong>: {{book.title}}</li>
+                  <li><strong> إسم المؤلف</strong>: {{book.author}}</li>
+                  <li><strong>لغة الكتاب</strong>: {{book.language}}</li>
+                  <li><strong> نبذة مختصرة</strong>: {{book.category}}</li>
+                  <li><strong> القسم</strong>: {{book.language}}</li>
+                  <li><strong>عدد المشاهدات</strong>: <a href="#">{{book.views}}</a></li>
+                  <li><strong>  أضيف بواسطة</strong>: {{book.created_by}}</li>
+                  <li><strong> تاريخ الإضافة</strong>: {{book.created_dt |date:'Y-m-d H:i' }}</li>
+                </ul>
+              </div>
+              <a href="{{ book.pdf_File.url }}"  class="btn btn-outline-success">
+                تحميل الكتاب</a>
+            </div>
+  
+          </div>
+  
+        </div>
+      </section><!-- End Portfolio Details Section -->
+      {% endblock %}

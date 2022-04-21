@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/account.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="text-center logo my-4">
+      <a href="{% url 'libary_app:index' %}">تسجيل عضوية خريج</a>
+    </h1>
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10 col-sm-12">
+        <div class="card">
+          <div class="card-body">
+           
+            <form method="post" novalidate>
+              {% csrf_token %}
+              {% include 'includes/form.html' %}
+              <button type="submit" class="btn btn-primary btn-block">إنشاء حساب </button>
+            </form>
+          </div>
+          <div class="card-footer text-muted text-center">
+            هل يوجد لديك حساب بالفعل? <a href="{%url 'accounts:login'%}">تسجيل الدخول</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

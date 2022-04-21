@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{%block title%}حسابي {%endblock%}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item active">حسابي</li>
+{%endblock%}
+
+{% block content %}
+<section id="team" class="team">
+  <div class="container col-lg-4">
+  
+    <div class="section-title">
+      <h2>حسابي</h2>
+      <form method="post" novalidate class="m-2">
+        {% csrf_token %}
+        {% include 'includes/form.html'%}
+        <button type="submit" class="btn btn-success">Save Changes</button>
+      </form>
+    </div>
+  </div>
+</section>
+ 
+{%endblock%}

@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+
+<!-- ======= Testimonials Section ======= -->
+<section id="testimonials" class="testimonials card-d w-100 bg-white p-5 m-3">
+  <p style="color: #99c2ff; font-size: 25px; text-align: center;"> تم إضافتها مؤخراً </p>
+  <hr>
+  <div class="container" data-aos="fade-up">
+    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper">
+        {% for x in book %}
+        <div class="swiper-slide">
+          <div class="member  ">
+
+            <div class="testimonial-item">
+              <img src="{{ x.pic_book.url}}" style="display: block; max-width: 50%;" alt="">
+
+            </div>
+
+          </div>
+        </div><!-- End testimonial item -->
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+<!-- End Testimonials Section -->
+
+
+
+<!-- ======= Counts Section ======= -->
+<section id="counts" class="counts card-d w-100 bg-white p-5 m-3">
+  <p style="color: #ff0077; font-size: 25px; text-align: center;"> المكتبة في أرقام </p>
+  <hr>
+  <br>
+  <div class="container">
+    <div class="row justify-content-end">
+      <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+        <div class="count-box">
+          <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="2"
+            class="purecounter"></span>
+          <p style="color: #ff0077; font-size: 25px; text-align: center;"> عدد الكتب </p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+        <div class="count-box">
+          <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="2"
+            class="purecounter"></span>
+          <p style="color: #99c2ff; font-size: 25px; text-align: center;"> كتاب عربي </p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+        <div class="count-box">
+          <span data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="2"
+            class="purecounter"></span>
+          <p style="color: #ffdf80;; font-size: 25px; text-align: center;"> كتاب إنجليزي </p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+        <div class="count-box">
+          <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="2"
+            class="purecounter"></span>
+          <p style="color: #ff0077; font-size: 25px; text-align: center;"> عدد الزوار </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Counts Section -->
+
+<!-- ======= Team Section ======= -->
+<section id="team" class="team card-d w-100 bg-white p-5 m-3">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>أكثر الكتب قراءة</h2>
+      <hr>
+    </div>
+    <div class="row ">
+      {% for x in book %}
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+        <div class="member ">
+          <div class="member-img">
+            <img src="{{ x.pic_book.url}}" class="img-fluid" alt="">
+
+          </div>
+          <div class="social">
+            <ul>
+              <li class="list-group-item"><i class=""></i><strong> تحميل</strong></li>
+
+            </ul>
+          </div>
+          <div class="member-info m-1">
+            <h4>{{x.title}}</h4>
+            <p>{{x.language}}</p>
+            <p>{{x.category}}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- End Team Section -->
+{% endblock content %}

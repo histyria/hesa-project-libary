@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{%block title%}طلب زيارة مدرسية {%endblock%}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item active">طلب زيارة مدرسية </li>
+{%endblock%}
+
+{% block content %}
+<section id="team" class="team">
+  <div class="container col-lg-4">
+  
+    <div class="section-title">
+      <h2>طلب زيارة مدرسية</h2>
+      <form method="post" novalidate class="m-2">
+        {% csrf_token %}
+        {% include 'includes/form.html'%}
+        <button type="submit" class="btn btn-success">إرسال</button>
+      </form>
+    </div>
+  </div>
+</section>
+ 
+{%endblock%}

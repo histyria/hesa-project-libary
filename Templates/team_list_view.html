@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<section id="team" class="team">
+  <div class="container">
+  
+    <div class="section-title">
+      <h2>فريق العمل</h2>
+      
+    </div>
+  
+    <div class="row">
+      <table class="table table-sm" >
+        <table class="table table-bordered" id="table_id" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>الإسم</th>
+                    <th>المرحلة الدراسية </th>
+                    <th>نبذة شخصية</th>
+                    
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% for x in team %}
+                <tr>
+                    <td>{{ x.name }}</td>
+                    <td>{{ x.school_level }}</td>
+                    <td>{{ x.information_me }}</td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </table>
+    </div>
+  
+  </div>
+  </section><!-- End Our Team Section -->
+  
+      {% endblock %}

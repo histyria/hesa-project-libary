@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+                    <div class="card card-primary card-outline">
+                        
+                        <div class="card-header">
+                            <h5 class="m-0">Last SICKLIVES ADD</h5>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-sm" >
+                                <table class="table table-bordered" id="table_id" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>NAME</th>
+                                            <th>Number Of Days</th>
+                                            <th>Date Add</th>
+                                            <th>View</th>
+                                            <th>Download</th>
+                                        </tr>
+                                    </thead>
+                                    
+                                    <tbody>
+                                        {% for Sick in cat %}
+                                        <tr>
+                                            <td>{{ Sick.id }}</td>
+                                            <td>{{ Sick.title }}</td>
+                                            <td>{{ Sick.summary }}</td>
+                                            <td>
+                                                {% if Sick.pdf_File %}
+                                                  <a href="{{ Sick.pdf_File.url }}" class="btn btn-outline-primary" target="_blank">
+                                                View PDF</a>
+                                                {% else %}
+                                                <span class="text-muted">No PDF</span>
+                                               {% endif %}
+                                              </td>
+                                              <td>
+                                                {% if Sick.pdf_File %}
+                                                  <a href="{{ Sick.pdf_File.url }}" download class="btn btn-outline-success">
+                                                Download PDF</a>
+                                                {% else %}
+                                                <span class="text-muted">No PDF</span>
+                                               {% endif %}
+                                              </td> 
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </table>
+                        </div>
+                    </div>
+
+                    {% endblock %}

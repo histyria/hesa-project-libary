@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<section id="team" class="team">
+  <div class="container">
+  
+    <div class="section-title">
+      <h2>طلبات مواعيد الزياره</h2>
+      
+    </div>
+  
+    <div class="row">
+      <table class="table table-sm" >
+        <table class="table table-bordered" id="table_id" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>إسم المدرسة</th>
+                    <th>تاريخ الحضور المتوقع </th>
+                    <th>إسم المشرفة</th>
+                    <th>عدد الطالبات</th>
+                    <th>تاريخ تسجيل الطلب</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% for x in school %}
+                <tr>
+                    <td>{{ x.school_name }}</td>
+                    <td>{{ x.appoitment_dt |date:'Y-m-d '}}</td>
+                    <td>{{ x.staff_name }}</td>
+                    <td>{{ x.student_count }}</td>
+                    <td>{{ x.created_dt |date:'Y-m-d '}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </table>
+    </div>
+  
+  </div>
+  </section><!-- End Our Team Section -->
+  
+      {% endblock %}

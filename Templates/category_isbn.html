@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section id="team" class="team">
+    <div class="container">
+    
+      <div class="section-title">
+        {% for g in tit %}
+        <h2>{{g.category}}</h2>
+        {% endfor %}
+        <hr>
+      </div>
+   
+      <div class="row">
+    
+        
+         
+        {% for x in cat %}
+        <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.1s">
+          <div class="member">
+            <img src="{{x.pic_book.url}}" style="display: block; margin: 0 auto; max-height: 300px;" class="img-fluid" alt="">
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>{{x.title}} </h4>
+                <span>{{x.summary}}</span>
+              </div>
+              <div class="social">
+
+                <a href="{% url 'libary_app:bookDetailView' x.id %}"  class="btn btn-outline-primary">مشاهده</a>
+                
+
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    
+    
+    
+    
+    
+      </div>
+    
+    </div>
+    </section><!-- End Our Team Section -->
+    {% endblock %}
