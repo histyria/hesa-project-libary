@@ -4,7 +4,7 @@ open terminal
 
 git clone https://github.com/histyria/hesa-project.git
 
-cd hesa-project
+cd hesa-project-libary
 
 python -m venv venv
 
